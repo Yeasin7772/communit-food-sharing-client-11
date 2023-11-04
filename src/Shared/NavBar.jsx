@@ -30,7 +30,7 @@ const NavBar = () => {
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="inline-block w-6 h-6 stroke-current"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
                         </label>
                     </div>
-                    <div className="flex-1 px-2 mx-2 text-5xl font-bold text-yellow-500">Be AHand </div>
+                    <div className="flex-1 px-2 mx-2 text-3xl font-bold text-yellow-500">AHand </div>
                     <div className="flex-none hidden lg:block">
                         <div className="flex justify-center items-center gap-5 ">
                             {/* Navbar menu content here */}
@@ -58,13 +58,15 @@ const NavBar = () => {
                         </ul>
                     </div>
                 </div>
-                
+
             </div>
             <div className="drawer-side">
                 <label htmlFor="my-drawer-3" aria-label="close sidebar" className="drawer-overlay"></label>
-                <ul className="menu p-4 w-80 min-h-full bg-base-200">
+                <ul className="menu p-4 w-60 min-h-full bg-base-200">
                     {/* Sidebar content here */}
-                    {navLinks}
+                    <div className="flex flex-col justify-center items-center gap-5">
+                        {navLinks}
+                    </div>
                 </ul>
             </div>
 
