@@ -1,5 +1,21 @@
 import { NavLink, Link } from "react-router-dom";
+import useAuth from "../hooks/useAuth";
 const NavBar = () => {
+
+    const { user, logOut } = useAuth()
+    const handelLogOut = () => {
+        logOut()
+            .then(result => {
+                console.log(result.user);
+            })
+            .catch(error => {
+                console.error(error);
+            })
+    }
+
+
+
+
     const navLinks = <>
         <NavLink to='/' className={({ isActive, isPending }) =>
             isActive ? 'btn btn-primary btn-sm' : isPending ? 'btn btn-ghost  btn-sm' : ' '
@@ -16,8 +32,6 @@ const NavBar = () => {
         <NavLink to='/myFoodRequest' className={({ isActive, isPending }) =>
             isActive ? 'btn btn-primary btn-sm' : isPending ? 'btn btn-ghost  btn-sm' : ' '
         }>My Food Request</NavLink>
-
-
     </>
     return (
         <div className="drawer">
@@ -40,22 +54,42 @@ const NavBar = () => {
 
 
                     </div>
-                    <div className="dropdown ml-5 dropdown-end">
-                        <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-                            <div className="w-10 rounded-full">
-                                <img src="/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+                    <div className="ml-5">
+                        {
+                            user?.email ? <div className="dropdown dropdown-end">
+                                <label tabIndex={0} className="btn btn-ghost btn-circle avatar online">
+                                    <div className="w-12 rounded-full">
+                                         <img src={user?.photoURL} alt='' />
+
+                                    </div>
+                                </label>
+                                <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+                                    <li>
+                                        <button className="btn btn-ghost">{user.displayName}</button>
+
+                                    </li>
+                                    <li>
+                                        <button className="btn  btn-ghost"
+                                            onClick={handelLogOut}
+                                        >Sign Out</button>
+
+                                    </li>
+                                </ul>
                             </div>
-                        </label>
-                        <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
-                            <li>
-                                <a className="justify-between">
-                                    Profile
-                                    <span className="badge">New</span>
-                                </a>
-                            </li>
-                            <li><a>Settings</a></li>
-                            <li><a>Logout</a></li>
-                        </ul>
+                                :
+
+                                <div className="flex justify-between items-center" >
+                                    <Link to='/login'>
+                                        <button className="btn btn-sm  btn-ghost">Sign In</button>
+                                    </Link>
+                                    <div className="w-12 rounded-full">
+                                   <img src='https://i.ibb.co/Y8fBVjy/boy2.jpg' alt='' /> 
+
+                                    </div>
+                                   
+
+                                </div>
+                        }
                     </div>
                 </div>
 
