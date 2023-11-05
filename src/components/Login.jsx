@@ -43,7 +43,7 @@ const Login = () => {
     }
     return (
         <div>
-            <div className="hero min-h-screen" style={{ backgroundImage: 'url(http://unlockdesizn.com/html/non-profit/be-ahand/demo/images/about/1.jpg)' }}>
+            <div className="hero min-h-screen" style={{ backgroundImage: 'url(https://i.ibb.co/C1hYLBx/close-up-people-volunteer-teamwork-join-hands-togetherstack-handsunity-teamwork-volunteering-concept.jpg)' }}>
                 <div className="hero-overlay bg-opacity-60"></div>
                 <div className="hero min-h-screen ">
                     <div className="hero-content flex-col lg:flex-row">

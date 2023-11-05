@@ -60,7 +60,9 @@ const NavBar = () => {
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="inline-block w-6 h-6 stroke-current"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
                         </label>
                     </div>
-                    <div className="flex-1 px-2 mx-2 text-3xl font-bold text-yellow-500">AHand </div>
+                    <div className="flex-1 px-2 mx-2 text-3xl font-bold text-yellow-500"> 
+                    <img src="http://unlockdesizn.com/html/non-profit/be-ahand/demo/images/header-logo.png" alt="" />
+                    </div>
                     <div className="flex-none hidden lg:block">
                         <div className="flex justify-center items-center gap-5 ">
                             {/* Navbar menu content here */}
@@ -114,17 +116,14 @@ const NavBar = () => {
                             </div>
                                 :
 
-                                <div className="flex justify-between items-center" >
+                                
                                     <Link to='/login'>
-                                        <button className="btn btn-sm  btn-ghost">Sign In</button>
+                                        <button className="btn btn-ghost">Sign In</button>
                                     </Link>
-                                    <div className="w-12 rounded-full">
-                                        <img src='https://i.ibb.co/Y8fBVjy/boy2.jpg' alt='' />
-
-                                    </div>
+                                   
 
 
-                                </div>
+                                
                         }
                     </div>
                 </div>

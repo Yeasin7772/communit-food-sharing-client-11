@@ -9,10 +9,10 @@ const Volunteer = () => {
                     <p className="text-xl font-semibold ">Your Attention Is Changed The Part Of World.Give a helping hand to those who need it!</p>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 md:grid-cols-4 gap-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
 
                     {/* 01 */}
-                    <div className="card  bg-base-100 shadow-xl">
+                    <div className="card ">
                         <figure><img src="http://unlockdesizn.com/html/non-profit/be-ahand/demo/images/team/1.jpg" alt="Shoes" className="rounded-xl" /></figure>
                         <div className="card-body">
                             <h2 className="card-title">
@@ -27,7 +27,7 @@ const Volunteer = () => {
                     </div>
                     {/* 02 */}
 
-                    <div className="card bg-base-100 shadow-xl">
+                    <div className="card ">
                         <figure><img src="http://unlockdesizn.com/html/non-profit/be-ahand/demo/images/team/2.jpg" alt="Shoes" className="rounded-xl" /></figure>
                         <div className="card-body">
                             <h2 className="card-title">
@@ -42,7 +42,7 @@ const Volunteer = () => {
                     </div>
                     {/* 03 */}
 
-                    <div className="card  bg-base-100 shadow-xl">
+                    <div className="card ">
                         <figure><img src="http://unlockdesizn.com/html/non-profit/be-ahand/demo/images/team/3.jpg" alt="Shoes" className="rounded-xl" /></figure>
                         <div className="card-body">
                             <h2 className="card-title">
@@ -57,7 +57,7 @@ const Volunteer = () => {
                     </div>
                     {/* 04 */}
 
-                    <div className="card bg-base-100 shadow-xl">
+                    <div className="card ">
                         <figure><img src="http://unlockdesizn.com/html/non-profit/be-ahand/demo/images/team/6.jpg" alt="Shoes" className="rounded-xl" /></figure>
                         <div className="card-body">
                             <h2 className="card-title">

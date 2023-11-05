@@ -5,7 +5,7 @@ const AboutBe = () => {
         <div className=" ">
             <div className="hero min-h-screen  mb-10 mt-10">
                 <div className="hero-content flex-col lg:flex-row-reverse">
-                    <img src="http://unlockdesizn.com/html/non-profit/be-ahand/demo/images/about/1.jpg" className="max-w-full rounded-lg shadow-2xl h-96" />
+                    <img src="https://i.ibb.co/rHFFC8z/charity-donations-help-support-giving-community-concept.jpg" className="max-w-full rounded-lg shadow-2xl h-96" />
                     <div>
                     
                     </div>
