@@ -68,7 +68,7 @@ const Features = () => {
 
                 <div className="mt-5">
                         <div className="flex justify-center items-center">
-                            <Link >
+                            <Link  to='/availableFoods'>
                                 <button className="btn btn-outline"> 
                                 <span className="loading loading-spinner"></span>
                                 see all</button>

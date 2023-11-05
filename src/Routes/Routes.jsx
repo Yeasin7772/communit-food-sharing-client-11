@@ -5,6 +5,8 @@ import MainLayout from "../Layout/MainLayout";
 import Login from "../components/Login";
 import Register from "../components/Register";
 import Features from "../Pages/Features";
+import AvailableFoods from "../Pages/AvailableFoods";
+import PrivateRoutes from "./PrivateRoutes";
 
 const Routes = createBrowserRouter([
     {
@@ -20,8 +22,12 @@ const Routes = createBrowserRouter([
             {
                 path: '/features',
                 element: <Features></Features>,
-                loader: () => fetch('http://localhost:5000/api/v1/foods')
+                // loader: () => fetch('http://localhost:5000/api/v1/foods')
                 
+            },
+            {
+                path: '/availableFoods',
+                element:<PrivateRoutes> <AvailableFoods /></PrivateRoutes>
             },
             {
                 path: '/login',
