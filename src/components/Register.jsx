@@ -80,9 +80,15 @@ const Register = () => {
     }
     return (
         <div>
-            <div className="hero min-h-screen" style={{ backgroundImage: 'url(http://unlockdesizn.com/html/non-profit/be-ahand/demo/images/about/1.jpg)' }}>
-                <div className="hero-overlay bg-opacity-60"></div>
+            <div className="text-center space-y-5 mt-5 mb-5 text-primary">
+                <h1 className="text-4xl font-semibold">Login or Register</h1>
+                <p className=" font-semibold "><small>Sign in and choose your service to have access to all our service.</small></p>
+            </div>
+            <div className="hero min-h-screen" style={{ backgroundImage: 'url(https://i.ibb.co/C1hYLBx/close-up-people-volunteer-teamwork-join-hands-togetherstack-handsunity-teamwork-volunteering-concept.jpg)' }}>
+                <div className="hero-overlay bg-opacity-30"></div>
+
                 <div className="hero min-h-screen ">
+
                     <div className="hero-content flex-col lg:flex-row">
                         <div className=" w-1/2 mr-12 ">
                         </div>
@@ -124,7 +130,7 @@ const Register = () => {
                             <p className='my-4 text-center'>Have an account?
                                 <Link
 
-                                    className='text-primary font-bold' to='/login'> Sign Up</Link></p>
+                                    className='text-primary font-bold' to='/login'> Sign In</Link></p>
                         </div>
                     </div>
                 </div>
