@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const ErrorPage = () => {
     return (
-        <div className="hero min-h-full lg:h-[80vh]" style={{ backgroundImage: 'url(https://i.ibb.co/MPCB2Pj/404.gif)' }}>
+        <div className="hero min-h-full lg:h-[100vh]" style={{ backgroundImage: 'url(https://i.ibb.co/MPCB2Pj/404.gif)' }}>
             <div className="hero-overlay bg-opacity-40"></div>
             <div className="hero-content text-center text-black">
                 <div className=" px-12">
