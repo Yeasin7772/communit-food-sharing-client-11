@@ -1,5 +1,5 @@
-import axios from "axios";
 import useAuth from "../hooks/useAuth";
+import Swal from "sweetalert2";
 
 
 const AddFood = () => {
@@ -30,7 +30,7 @@ const AddFood = () => {
 
         console.log(addFood);
         // form.reset()
-        fetch('https://automotive-server-shop-l5p0bj4sm-yeasin-mollas-projects.vercel.app/automotive', {
+        fetch('http://localhost:5000/api/v1/foods', {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json'
@@ -40,15 +40,16 @@ const AddFood = () => {
             .then(res => res.json())
             .then(data => {
                 console.log(data);
-                // if (data.insertedId) {
-
-                //     Swal.fire({
-                //         title: 'success!',
-                //         text: 'Added successfully',
-                //         icon: 'success',
-                //         confirmButtonText: 'Cool'
-                //     })
-                // }
+                 if (data.insertedId) {
+                    Swal.fire({
+                        title: "Thank You!",
+                        text: "For You Donation.",
+                        imageUrl: "https://i.ibb.co/PcRJ9Kj/volunteer-holding-box-containing-donations-charity.jpg",
+                        imageWidth: 400,
+                        imageHeight: 200,
+                        imageAlt: "Custom image"
+                      });
+                }
             });
     }
     return (
