@@ -143,6 +143,9 @@ const ManageFood = () => {
                     </Link>
                     {/* <button onClick={() => document.getElementById('my_modal_1').showModal()} className="bg-blue-500 text-white px-2 py-1 rounded">Update</button> */}
                     <button onClick={() => handleDelete(row.values._id)} className="bg-red-500 text-white px-2 py-1 rounded">Delete</button>
+                   <Link to={`/foodDetails/${row.values._id}`}>
+                   <button  className="bg-red-500 text-white px-2 py-1 rounded">Manage</button>
+                   </Link>
                 
                 </div>
             ),

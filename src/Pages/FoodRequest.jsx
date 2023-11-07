@@ -90,8 +90,8 @@ const FoodRequest = () => {
 
             <div className="hero min-h-full lg:h-[50vh] mt-10 mb-10" style={{ backgroundImage: 'url(https://i.ibb.co/BTL0J8L/20827730-Father-pointing-to-clock-to-schoolboy-with-backpack.jpg)' }}>
                 <div className="hero-overlay bg-opacity-0"></div>
-                <div className="hero-content text-center text-neutral-content">
-                   
+                <div className="hero-content text-center text-primary">
+                <h1 className="mb-5 text-4xl font-bold ">You Food Request List</h1>
                 </div>
             </div>
 

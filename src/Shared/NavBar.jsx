@@ -48,9 +48,12 @@ const NavBar = () => {
         <NavLink to='/myFoodRequest' className={({ isActive, isPending }) =>
             isActive ? 'btn btn-primary btn-sm' : isPending ? 'btn btn-ghost  btn-sm' : ' '
         }>My Food Request</NavLink>
+        <NavLink to='/contact' className={({ isActive, isPending }) =>
+            isActive ? 'btn btn-primary btn-sm' : isPending ? 'btn btn-ghost  btn-sm' : ' '
+        }>Contact us</NavLink>
     </>
     return (
-        <div className="drawer">
+        <div className="drawer rounded-full">
             <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
             <div className="drawer-content flex flex-col">
                 {/* Navbar */}
