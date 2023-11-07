@@ -1,5 +1,6 @@
 import { Link, useLoaderData } from "react-router-dom";
 import useAuth from "../hooks/useAuth";
+import Swal from "sweetalert2";
 
 const FoodDeatils = () => {
     const foodDetails = useLoaderData()
@@ -32,7 +33,7 @@ const FoodDeatils = () => {
             donator_image, donator_name,
             food_quantity, pickup_location,
             expired_date, additional_notes,
-            donator_email, donation_money, request: _id, request_date,
+            donator_email, donation_money,  request_date,
             user_name
         }
         // console.log(requestFood);
@@ -41,17 +42,22 @@ const FoodDeatils = () => {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
-
             },
             body: JSON.stringify(requestFood)
         })
-            .then(res => res.json())
-            .then(data => {
-                console.log(data);
-                if (data.insertedId) {
-                    alert('added to mongo')
-                }
-            })
+        .then(res => res.json())
+        .then(data => {
+            console.log(data)
+            if (data.insertedId) {
+                Swal.fire({
+                    title: 'success!',
+                    text: 'User added successfully',
+                    icon: 'success',
+                    confirmButtonText: 'Cool'
+                })
+            }
+
+        })
 
 
     }

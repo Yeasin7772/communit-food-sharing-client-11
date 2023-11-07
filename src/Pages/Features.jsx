@@ -16,7 +16,7 @@ const Features = () => {
             })
 
     }, [])
-    console.log(foods);
+  //  console.log(foods);
 
 
 
