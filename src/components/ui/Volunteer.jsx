@@ -13,7 +13,7 @@ const Volunteer = () => {
 
                     {/* 01 */}
                     <div className="card ">
-                        <figure><img src="http://unlockdesizn.com/html/non-profit/be-ahand/demo/images/team/1.jpg" alt="Shoes" className="rounded-xl" /></figure>
+                        <figure><img src="http://unlockdesizn.com/html/non-profit/be-ahand/demo/images/team/1.jpg" alt="Shoes" className="rounded-xl " /></figure>
                         <div className="card-body">
                             <h2 className="card-title">
                                 John Smith
