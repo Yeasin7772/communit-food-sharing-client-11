@@ -23,6 +23,8 @@ const FoodDeatils = () => {
         const donator_email = form.donator_email.value
         const additional_notes = form.pickup_location.value
         const donation_money = form.donation_money.value
+        const request_date = form.request_date.value
+        const user_name = form.user_name.value
 
 
         const requestFood = {
@@ -30,7 +32,8 @@ const FoodDeatils = () => {
             donator_image, donator_name,
             food_quantity, pickup_location,
             expired_date, additional_notes,
-            donator_email, donation_money, request: _id
+            donator_email, donation_money, request: _id, request_date,
+            user_name
         }
         // console.log(requestFood);
 
@@ -146,6 +149,13 @@ const FoodDeatils = () => {
                                 </div>
                                 <div className="form-control">
                                     <label className="label">
+                                        <span className="label-text">Current Date</span>
+                                    </label>
+                                    <input type="date" name="request_date" placeholder="Date" className="input input-bordered" required />
+
+                                </div>
+                                <div className="form-control">
+                                    <label className="label">
                                         <span className="label-text">PickUp Location</span>
                                     </label>
                                     <input readOnly type="text" name="pickup_location" defaultValue={pickup_location} placeholder="Location" className="input input-bordered" required />
@@ -159,9 +169,15 @@ const FoodDeatils = () => {
                                 </div>
                                 <div className="form-control">
                                     <label className="label">
+                                        <span className="label-text">Donator Name </span>
+                                    </label>
+                                    <input readOnly type="text" defaultValue={donator_name} name="donator_name" placeholder="Enter Your name" className="input input-bordered" required />
+                                </div>
+                                <div className="form-control">
+                                    <label className="label">
                                         <span className="label-text">Enter Your name</span>
                                     </label>
-                                    <input readOnly type="text" defaultValue={user?.displayName} name="donator_name" placeholder="Enter Your name" className="input input-bordered" required />
+                                    <input readOnly type="text" defaultValue={user?.displayName} name="user_name" placeholder="Enter Your name" className="input input-bordered" required />
                                 </div>
                                 <div className="form-control">
                                     <label className="label">
