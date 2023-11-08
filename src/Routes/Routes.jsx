@@ -12,6 +12,7 @@ import AddFood from "../Pages/AddFood";
 import ManageFood from "./ManageFood";
 import UpdateFood from "../components/ui/UpdateFood";
 import FoodRequest from "../Pages/FoodRequest";
+import Contact from "../Pages/Contact";
 
 
 const Routes = createBrowserRouter([
@@ -71,6 +72,10 @@ const Routes = createBrowserRouter([
             {
                 path: '/register',
                 element: <Register />
+            },
+            {
+                path: '/contact',
+                element: <Contact />
             }
         ]
 
