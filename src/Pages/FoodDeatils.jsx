@@ -33,7 +33,7 @@ const FoodDeatils = () => {
             donator_image, donator_name,
             food_quantity, pickup_location,
             expired_date, additional_notes,
-            donator_email, donation_money,  request_date,
+            donator_email, donation_money, request_date,
             user_name
         }
         // console.log(requestFood);
@@ -41,23 +41,25 @@ const FoodDeatils = () => {
         fetch('http://localhost:5000/api/v1/user/request', {
             method: 'POST',
             headers: {
-                'content-type': 'application/json'
+                'content-type': 'application/json',
             },
-            body: JSON.stringify(requestFood)
+            body: JSON.stringify(requestFood),
+            credentials: 'include',
         })
-        .then(res => res.json())
-        .then(data => {
-            console.log(data)
-            if (data.insertedId) {
-                Swal.fire({
-                    title: 'success!',
-                    text: 'User added successfully',
-                    icon: 'success',
-                    confirmButtonText: 'Cool'
-                })
-            }
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+                if (data.insertedId) {
+                    Swal.fire({
+                        title: 'success!',
+                        text: 'Your Requests has been recorded',
+                        icon: 'success',
+                        confirmButtonText: 'Cool'
+                    })
+                    document.getElementById("my_modal_1").close();
+                }
 
-        })
+            })
 
 
     }
@@ -215,6 +217,8 @@ const FoodDeatils = () => {
 
                                 <input className="btn btn-primary btn-block" type="submit" value=" Send request" />
                             </div>
+
+
                         </form>
                         <div className="modal-action">
                             <form method="dialog">

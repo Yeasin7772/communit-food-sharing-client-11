@@ -7,8 +7,8 @@ const Contact = () => {
                 <h1 className="text-4xl font-semibold">CONTACT DETAILS </h1>
 
 
-            </div>
-            <div className="flex flex-col sm:flex-row items-center justify-between gap-5 mb-10 border-2 p-5 rounded sm:p-8 md:p-10 lg:p-12 xl:p-16">
+            </div >
+            <div className="flex flex-col bg-base-200 sm:flex-row items-center justify-between gap-5 mb-10 border-2 p-5 rounded sm:p-8 md:p-10 lg:p-12 xl:p-16">
                 <div className="space-y-2">
                     <p className="text-xl bg-primary text-white font-bold
                      border-dashed border-2 p-5 rounded">beahand@email.com</p>
@@ -21,9 +21,9 @@ const Contact = () => {
                 </div>
 
 
-                <div>
+                <div >
                     <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-                        <div className="form-control">
+                        <div className="form-control ">
                             <label className="label">
                                 <span className="label-text">Your Name</span>
                             </label>
@@ -59,7 +59,7 @@ const Contact = () => {
                         <textarea className="textarea textarea-info h-44" placeholder="Your Message"></textarea>
 
                     </div>
-                    <div>
+                    <div className="mt-4">
                         <button className="btn btn-outline btn-primary">Submit</button>
                     </div>
                 </div>

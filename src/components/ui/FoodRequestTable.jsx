@@ -1,7 +1,7 @@
 import { AiFillDelete } from "react-icons/ai";
 
 const FoodRequestTable = ({ item, handelCancel,handelStatusChange }) => {
-    console.log(item);
+   // console.log(item);
 
     // console.log(Object.keys(item).join(','));
     const { _id, food_image, food_name, donator_image,

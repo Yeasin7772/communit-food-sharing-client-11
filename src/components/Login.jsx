@@ -18,6 +18,7 @@ const Login = () => {
 
     const handelGoogle = () => {
         googleLogin()
+        navigate(location?.state ? location.state : '/')
     }
 
 
@@ -37,6 +38,12 @@ const Login = () => {
             })
             .catch(error => {
                 console.error(error);
+                Swal.fire({
+                    icon: "error",
+                    title: "Oops...",
+                    text: "Password dosent match",
+                    footer: '<a href="#">Why do I have this issue?</a>'
+                });
             })
 
 

@@ -16,7 +16,7 @@ const Features = () => {
             })
 
     }, [])
-  //  console.log(foods);
+    //  console.log(foods);
 
 
 
@@ -32,7 +32,9 @@ const Features = () => {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 ">
                     {
-                        foods?.map(food => <div key={food._id}>
+                        foods?.map(food => <div data-aos="flip-left"
+                            data-aos-easing="ease-out-cubic"
+                            data-aos-duration="2000" key={food._id}>
                             <div className="card card-compact  bg-base-100 shadow-xl">
                                 <figure><img className="h-64 w-full" src={food.food_image} alt="Shoes" /></figure>
                                 <div className="card-body">
@@ -62,19 +64,19 @@ const Features = () => {
                         </div>)
                     }
 
-                    
+
                 </div>
 
 
                 <div className="mt-5">
-                        <div className="flex justify-center items-center">
-                            <Link  to='/availableFoods'>
-                                <button className="btn btn-outline"> 
+                    <div className="flex justify-center items-center">
+                        <Link to='/availableFoods'>
+                            <button className="btn btn-outline">
                                 <span className="loading loading-spinner"></span>
                                 see all</button>
-                            </Link>
-                        </div>
+                        </Link>
                     </div>
+                </div>
 
 
 

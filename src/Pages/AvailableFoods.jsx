@@ -24,7 +24,7 @@ const AvailableFoods = () => {
     useEffect(() => {
         axios
             .get(`http://localhost:5000/api/v1/foods?sortField=expired_date&sortOrder=${sortItemOrder}`)
-            .then((res) => {
+            .then(res => {
                 setAvailableFoods(res.data);
             })
 
@@ -44,7 +44,7 @@ const AvailableFoods = () => {
 
     return (
         <div className="mt-10">
-            <div className="flex flex-col sm:flex-row items-center justify-between gap-5 mb-10 border-2 p-5 sm:p-8 md:p-10 lg:p-12 xl:p-16">
+            <div className="flex bg-base-200  flex-col sm:flex-row items-center justify-between gap-5 mb-10 border-2 p-5 sm:p-8 md:p-10 lg:p-12 xl:p-16">
                 <div className="form-control">
                     <label className="label">
                         <span className="label-text">Search here</span>
@@ -95,7 +95,9 @@ const AvailableFoods = () => {
                     <p className="text-center text-2xl">No data available.</p>
                 ) : (
                     filteredFoods.map((food) => (
-                        <div key={food._id}>
+                        <div data-aos="flip-left"
+                            data-aos-easing="ease-out-cubic"
+                            data-aos-duration="2000" key={food._id}>
                             <div className="card card-compact bg-base-100 shadow-xl">
                                 <figure>
                                     <img className="h-64 w-full" src={food.food_image} alt="Food" />

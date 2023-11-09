@@ -28,14 +28,15 @@ const AddFood = () => {
             donator_email, Food_status
         }
 
-        console.log(addFood);
-        // form.reset()
+       // console.log(addFood);
+         form.reset()
         fetch('http://localhost:5000/api/v1/foods', {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify(addFood)
+            body: JSON.stringify(addFood),
+            credentials: 'include',
         })
             .then(res => res.json())
             .then(data => {

@@ -2,7 +2,9 @@
 
 const AboutBe = () => {
     return (
-        <div className=" ">
+        <div data-aos="fade-right"
+        data-aos-offset="300"
+        data-aos-easing="ease-in-sine" className=" mt-10 mb-10">
             <div className="hero min-h-screen  mb-10 mt-10">
                 <div className="hero-content flex-col lg:flex-row-reverse">
                     <img src="https://i.ibb.co/rHFFC8z/charity-donations-help-support-giving-community-concept.jpg" className="max-w-full rounded-lg shadow-2xl h-96" />

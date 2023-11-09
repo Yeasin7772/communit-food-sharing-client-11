@@ -76,26 +76,26 @@ const UpdateFood = () => {
                             <label className="label">
                                 <span className="label-text">Food Image</span>
                             </label>
-                            <input readOnly type="text" name="food_image" defaultValue={food_image} placeholder="Food PhotoURL" className="input input-bordered" required />
+                            <input  type="text" name="food_image" defaultValue={food_image} placeholder="Food PhotoURL" className="input input-bordered" required />
                         </div>
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text">Food Quantity</span>
                             </label>
-                            <input readOnly type="Number" defaultValue={food_quantity} name="food_quantity" placeholder="Food Quantity" className="input input-bordered" required />
+                            <input  type="Number" defaultValue={food_quantity} name="food_quantity" placeholder="Food Quantity" className="input input-bordered" required />
                         </div>
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text">Expired Date</span>
                             </label>
-                            <input readOnly type="date" name="expired_date" defaultValue={expired_date} placeholder="Expired Date" className="input input-bordered" required />
+                            <input  type="date" name="expired_date" defaultValue={expired_date} placeholder="Expired Date" className="input input-bordered" required />
 
                         </div>
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text">PickUp Location</span>
                             </label>
-                            <input readOnly type="text" name="pickup_location" defaultValue={pickup_location} placeholder="Location" className="input input-bordered" required />
+                            <input  type="text" name="pickup_location" defaultValue={pickup_location} placeholder="Location" className="input input-bordered" required />
 
                         </div>
                         <div className="form-control">
@@ -138,7 +138,7 @@ const UpdateFood = () => {
                     </div>
                     <div className="form-control mt-6 modal-action">
 
-                        <input className="btn btn-primary btn-block" type="submit" value=" Send request" />
+                        <input className="btn btn-primary btn-block" type="submit" value="Update" />
                     </div>
                 </form>
                 <div className="modal-action">

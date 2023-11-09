@@ -8,8 +8,9 @@ const FoodRequest = () => {
     const [foodRequest, setFoodRequest] = useState()
 
     useEffect(() => {
-        fetch('http://localhost:5000/api/v1/user/request')
+        fetch('http://localhost:5000/api/v1/user/request',)
             .then(res => res.json())
+            
             .then(data => {
                 const filterItems = data.filter(item => item.donator_email === user?.email);
                 setFoodRequest(filterItems);
@@ -88,10 +89,10 @@ const FoodRequest = () => {
         <div>
 
 
-            <div className="hero min-h-full lg:h-[50vh] mt-10 mb-10" style={{ backgroundImage: 'url(https://i.ibb.co/BTL0J8L/20827730-Father-pointing-to-clock-to-schoolboy-with-backpack.jpg)' }}>
+            <div className="hero min-h-full lg:h-[50vh] rounded mt-10 mb-10" style={{ backgroundImage: 'url(https://i.ibb.co/BTL0J8L/20827730-Father-pointing-to-clock-to-schoolboy-with-backpack.jpg)' }}>
                 <div className="hero-overlay bg-opacity-0"></div>
                 <div className="hero-content text-center text-primary">
-                <h1 className="mb-5 text-4xl font-bold ">You Food Request List</h1>
+                <h1 className="mb-5 text-4xl  font-bold ">Your Food Request List</h1>
                 </div>
             </div>
 

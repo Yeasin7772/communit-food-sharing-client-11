@@ -2,7 +2,7 @@ import { NavLink, Link } from "react-router-dom";
 import useAuth from "../hooks/useAuth";
 import { useEffect, useState } from "react";
 const NavBar = () => {
-
+    const [sticky, setSticky] = useState(false);
     const { user, logOut } = useAuth()
     const handelLogOut = () => {
         logOut()
@@ -30,6 +30,27 @@ const NavBar = () => {
     }
 
 
+    useEffect(() => {
+        const handleScroll = () => {
+            if (window.scrollY > 100) {
+                setSticky(true);
+            } else {
+                setSticky(false);
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, [sticky]);
+
+    const handelNavbarSticky = sticky
+        ? 'fixed top-0 left-0 right-0  shadow-md z-50 transition-transform duration-300 transform translate-y-0'
+        : 'relative';
+
+
 
 
     const navLinks = <>
@@ -37,7 +58,7 @@ const NavBar = () => {
             isActive ? 'btn btn-primary btn-sm ' : isPending ? 'btn btn-ghost  btn-sm' : ' '
         }>Home</NavLink>
         <NavLink to='/addFood' className={({ isActive, isPending }) =>
-            isActive ? 'btn btn-primary btn-sm ' : isPending ? 'btn btn-ghost  btn-sm '  : ' '
+            isActive ? 'btn btn-primary btn-sm ' : isPending ? 'btn btn-ghost  btn-sm ' : ' '
         }>Add Food </NavLink>
         <NavLink to='/availableFoods' className={({ isActive, isPending }) =>
             isActive ? 'btn btn-primary btn-sm' : isPending ? 'btn btn-ghost  btn-sm' : ' '
@@ -48,12 +69,15 @@ const NavBar = () => {
         <NavLink to='/myFoodRequest' className={({ isActive, isPending }) =>
             isActive ? 'btn btn-primary btn-sm' : isPending ? 'btn btn-ghost  btn-sm' : ' '
         }>My Food Request</NavLink>
+        <NavLink to='/manageSingle' className={({ isActive, isPending }) =>
+            isActive ? 'btn btn-primary btn-sm' : isPending ? 'btn btn-ghost  btn-sm' : ' '
+        }> Manage Single Food</NavLink>
         <NavLink to='/contact' className={({ isActive, isPending }) =>
             isActive ? 'btn btn-primary btn-sm' : isPending ? 'btn btn-ghost  btn-sm' : ' '
         }>Contact us</NavLink>
     </>
     return (
-        <div className="drawer rounded-full">
+        <div className={` drawer rounded-full ${handelNavbarSticky}`}>
             <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
             <div className="drawer-content flex flex-col">
                 {/* Navbar */}
@@ -63,8 +87,8 @@ const NavBar = () => {
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="inline-block w-6 h-6 stroke-current"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
                         </label>
                     </div>
-                    <div className="flex-1 px-2 mx-2 text-3xl font-bold text-yellow-500"> 
-                    <img src="http://unlockdesizn.com/html/non-profit/be-ahand/demo/images/header-logo.png" alt="" />
+                    <div className="flex-1 px-2 mx-2 text-3xl font-bold text-yellow-500">
+                        <img src="http://unlockdesizn.com/html/non-profit/be-ahand/demo/images/header-logo.png" alt="" />
                     </div>
                     <div className="flex-none hidden lg:block">
                         <div className="flex justify-center items-center gap-5 ">
@@ -110,7 +134,7 @@ const NavBar = () => {
 
                                     </li>
                                     <li>
-                                        <button className="btn  btn-ghost"
+                                        <button className="btn text-red-600  btn-ghost"
                                             onClick={handelLogOut}
                                         >Sign Out</button>
 
@@ -119,14 +143,14 @@ const NavBar = () => {
                             </div>
                                 :
 
-                                
-                                    <Link to='/login'>
-                                        <button className="btn btn-ghost">Sign In</button>
-                                    </Link>
-                                   
+
+                                <Link to='/login'>
+                                    <button className="btn btn-ghost">Sign In</button>
+                                </Link>
 
 
-                                
+
+
                         }
                     </div>
                 </div>

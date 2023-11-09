@@ -13,6 +13,7 @@ import ManageFood from "./ManageFood";
 import UpdateFood from "../components/ui/UpdateFood";
 import FoodRequest from "../Pages/FoodRequest";
 import Contact from "../Pages/Contact";
+import ManageSingleFood from "../Pages/ManageSingleFood";
 
 
 const Routes = createBrowserRouter([
@@ -49,10 +50,15 @@ const Routes = createBrowserRouter([
                 element: <PrivateRoutes><UpdateFood></UpdateFood></PrivateRoutes>,
                 loader: ({ params }) => fetch(`http://localhost:5000/api/v1/foods/${params.id}`)
             },
+            {
+                path: '/manageSingle',
+                element: <PrivateRoutes><ManageSingleFood></ManageSingleFood></PrivateRoutes>,
+                // loader: ({ params }) => fetch(`http://localhost:5000/api/v1/foods/${params.id}`)
+            },
 
             {
                 path: '/availableFoods',
-                element: <PrivateRoutes> <AvailableFoods /></PrivateRoutes>
+                element: <AvailableFoods />
             },
 
             {

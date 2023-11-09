@@ -8,7 +8,7 @@ const PrivateRoutes = ({ children }) => {
     const { user, loading } = useAuth()
 
     if (loading) {
-        return <div className="w-96 "><Lottie  animationData={anim}></Lottie></div>
+        return <div className=" flex justify-center items-center w-full "><Lottie  animationData={anim}></Lottie></div>
         // return <progress className="progress w-full"></progress>
     }
     if (user) {
