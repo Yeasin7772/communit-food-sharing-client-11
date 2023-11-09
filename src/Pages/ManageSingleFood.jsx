@@ -9,21 +9,21 @@ const ManageSingleFood = () => {
 
     useEffect(() => {
         // Fetch bid requests data from the backend API
-        fetch(`http://localhost:5000/api/v1/user/request`)
+        fetch(`https://communit-food-sharing-server.vercel.app/api/v1/user/request`)
             .then((response) => response.json())
             .then((data) => setFoodRequest(data));
     }, [user]);
-    console.log(foodRequest);
+   // console.log(foodRequest);
 
     const HandelAccept = (id) => {
         const data = { status: 'confirm' }
-        axios.put(`http://localhost:5000/api/v1/user/request/${id}`, data)
+        axios.put(`https://communit-food-sharing-server.vercel.app/api/v1/user/request/${id}`, data)
             .then(res => console.log(res.data))
 
     }
     const HandelReject = (id) => {
         const data = { status: 'Reject' }
-        axios.put(`http://localhost:5000/api/v1/user/request/${id}`, data)
+        axios.put(`https://communit-food-sharing-server.vercel.app/api/v1/user/request/${id}`, data)
             .then(res => console.log(res.data))
     }
     return (
@@ -34,7 +34,7 @@ const ManageSingleFood = () => {
                 <tr>
 
                     <th>Food Name</th>
-                    <th>Email</th>
+                    <th> Requester Email</th>
                   
                     <th>Request Time and Date</th>
                   

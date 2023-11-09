@@ -10,7 +10,11 @@ const ManageFood = () => {
     const [manageRequest, setManageRequest] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/api/v1/foods')
+        document.title = 'Charity Organizations Manage-Food'; 
+    }, []);
+
+    useEffect(() => {
+        fetch('https://communit-food-sharing-server.vercel.app/api/v1/foods')
             .then(res => res.json())
             .then(data => {
                 const filterItems = data.filter(item => item.donator_email === user?.email);
@@ -40,7 +44,7 @@ const ManageFood = () => {
     //     }
     //     console.log(updateFood);
     //     form.reset()
-    //     fetch(`http://localhost:5000/api/v1/foods/${_id}`, {
+    //     fetch(`https://communit-food-sharing-server.vercel.app/api/v1/foods/${_id}`, {
     //         method: "PUT",
     //         headers: {
     //             'Content-Type': 'application/json'
@@ -77,7 +81,7 @@ const ManageFood = () => {
         })
         .then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/api/v1/foods/${_id}`, {
+                fetch(`https://communit-food-sharing-server.vercel.app/api/v1/foods/${_id}`, {
                     method: "DELETE"
                 })
                 .then(res => res.json())

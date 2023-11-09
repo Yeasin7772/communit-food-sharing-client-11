@@ -5,6 +5,12 @@ import { Link } from "react-router-dom";
 const AvailableFoods = () => {
 
 
+
+    useEffect(() => {
+        document.title = 'Charity Organizations Available-Foods';
+    }, []);
+
+
     const [availableFoods, setAvailableFoods] = useState([]);
 
     const [sortItemOrder, setSortItemOrder] = useState("asc");
@@ -23,7 +29,7 @@ const AvailableFoods = () => {
 
     useEffect(() => {
         axios
-            .get(`http://localhost:5000/api/v1/foods?sortField=expired_date&sortOrder=${sortItemOrder}`)
+            .get(`https://communit-food-sharing-server.vercel.app/api/v1/foods?sortField=expired_date&sortOrder=${sortItemOrder}`)
             .then(res => {
                 setAvailableFoods(res.data);
             })

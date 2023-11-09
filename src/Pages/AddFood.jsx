@@ -1,9 +1,14 @@
+import { useEffect } from "react";
 import useAuth from "../hooks/useAuth";
 import Swal from "sweetalert2";
 
 
 const AddFood = () => {
     const { user } = useAuth()
+
+    useEffect(() => {
+        document.title = 'Charity Organizations Available-Foods';
+    }, []);
 
     const handelDonation = (e) => {
 
@@ -30,7 +35,7 @@ const AddFood = () => {
 
        // console.log(addFood);
          form.reset()
-        fetch('http://localhost:5000/api/v1/foods', {
+        fetch('https://communit-food-sharing-server.vercel.app/api/v1/foods', {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json'

@@ -8,7 +8,11 @@ const FoodRequest = () => {
     const [foodRequest, setFoodRequest] = useState()
 
     useEffect(() => {
-        fetch('http://localhost:5000/api/v1/user/request',)
+        document.title = 'Charity Organizations Food-Request'; 
+    }, []);
+
+    useEffect(() => {
+        fetch('https://communit-food-sharing-server.vercel.app/api/v1/user/request',)
             .then(res => res.json())
             
             .then(data => {
@@ -32,7 +36,7 @@ const FoodRequest = () => {
 
             .then((result) => {
                 if (result.isConfirmed) {
-                    fetch(`http://localhost:5000/api/v1/user/request/${id}`, {
+                    fetch(`https://communit-food-sharing-server.vercel.app/api/v1/user/request/${id}`, {
                         method: "DELETE"
                     })
                         .then(res => res.json())
@@ -55,7 +59,7 @@ const FoodRequest = () => {
     }
 
     const handelStatusChange =(id)=> {
-        fetch(`http://localhost:5000/api/v1/user/request/${id}`,{
+        fetch(`https://communit-food-sharing-server.vercel.app/api/v1/user/request/${id}`,{
             method:"PATCH",
             headers:{
                 'content-type':'application/json'

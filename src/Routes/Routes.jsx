@@ -30,13 +30,13 @@ const Routes = createBrowserRouter([
             {
                 path: '/features',
                 element: <Features></Features>,
-                // loader: () => fetch('http://localhost:5000/api/v1/foods')
+                // loader: () => fetch('https://communit-food-sharing-server.vercel.app/api/v1/foods')
 
             },
             {
                 path: '/addFood',
                 element: <PrivateRoutes><AddFood></AddFood></PrivateRoutes>,
-                // loader: () => fetch('http://localhost:5000/api/v1/foods')
+                // loader: () => fetch('https://communit-food-sharing-server.vercel.app/api/v1/foods')
 
             },
             {
@@ -48,12 +48,12 @@ const Routes = createBrowserRouter([
             {
                 path: '/update/:id',
                 element: <PrivateRoutes><UpdateFood></UpdateFood></PrivateRoutes>,
-                loader: ({ params }) => fetch(`http://localhost:5000/api/v1/foods/${params.id}`)
+                loader: ({ params }) => fetch(`https://communit-food-sharing-server.vercel.app/api/v1/foods/${params.id}`)
             },
             {
                 path: '/manageSingle',
                 element: <PrivateRoutes><ManageSingleFood></ManageSingleFood></PrivateRoutes>,
-                // loader: ({ params }) => fetch(`http://localhost:5000/api/v1/foods/${params.id}`)
+                // loader: ({ params }) => fetch(`https://communit-food-sharing-server.vercel.app/api/v1/foods/${params.id}`)
             },
 
             {
@@ -64,12 +64,12 @@ const Routes = createBrowserRouter([
             {
                 path: '/foodDetails/:id',
                 element: <PrivateRoutes> <FoodDeatils /></PrivateRoutes>,
-                loader: ({ params }) => fetch(`http://localhost:5000/api/v1/foods/${params.id}`)
+                loader: ({ params }) => fetch(`https://communit-food-sharing-server.vercel.app/api/v1/foods/${params.id}`)
             },
             {
                 path: '/myFoodRequest',
                 element: <PrivateRoutes> <FoodRequest /></PrivateRoutes>,
-                // loader: () => fetch('http://localhost:5000/api/v1/user/request')
+                // loader: () => fetch('https://communit-food-sharing-server.vercel.app/api/v1/user/request')
             },
             {
                 path: '/login',

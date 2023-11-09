@@ -7,7 +7,7 @@ const Features = () => {
     const [foods, setFoods] = useState()
 
     useEffect(() => {
-        fetch('http://localhost:5000/api/v1/foods')
+        fetch('https://communit-food-sharing-server.vercel.app/api/v1/foods')
             .then(res => res.json())
             .then(data => {
 

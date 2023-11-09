@@ -29,7 +29,7 @@ const NavBar = () => {
         }
     }
 
-
+ 
     useEffect(() => {
         const handleScroll = () => {
             if (window.scrollY > 100) {
@@ -71,7 +71,7 @@ const NavBar = () => {
         }>My Food Request</NavLink>
         <NavLink to='/manageSingle' className={({ isActive, isPending }) =>
             isActive ? 'btn btn-primary btn-sm' : isPending ? 'btn btn-ghost  btn-sm' : ' '
-        }> Manage Single Food</NavLink>
+        }> Manage Food</NavLink>
         <NavLink to='/contact' className={({ isActive, isPending }) =>
             isActive ? 'btn btn-primary btn-sm' : isPending ? 'btn btn-ghost  btn-sm' : ' '
         }>Contact us</NavLink>

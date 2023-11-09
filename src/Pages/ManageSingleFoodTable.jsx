@@ -10,16 +10,21 @@ const ManageSingleFoodTable = ({ HandelAccept, HandelReject, food }) => {
 
 
                 <td>
-                    {request_date}
+                    {food_name}
                 </td>
                 <td>{donator_email}</td>
                 <td>{expired_date}</td>
                 {
-                    status === 'matchedCount = 1' ? <span className="font-bold text-primary">Delivered</span> :
-                        <button onClick={() => HandelAccept(_id)} className="btn btn-ghost text-red-500 btn-xs">Pending</button>}
+                    status === 'confirm' ? <span className="font-bold text-primary">Delivered</span> :
+                        <button onClick={() => HandelAccept(_id)} className="btn btn-ghost text-blue-500 btn-xs">Pending</button>}
                 {/* <td><button className="font-bold text-green-600" onClick={() => HandelAccept(_id)}>Accept</button></td> */}
-                <td><button className="font-bold text-red-600" onClick={() => HandelReject(_id)}>Reject</button></td>
-                
+                <td>{
+                    status === 'Reject' ? <span className="font-bold text-red-500">Rejected</span> :
+                        <button onClick={() => HandelReject(_id)} className="btn btn-ghost text-emerald-500-500 btn-xs">Reject</button>}
+                         </td>
+                {/* {
+                    status === 'Reject' ? <span className="font-bold text-primary">Rejected</span> :
+                        <button onClick={() => HandelReject(_id)} className="btn btn-ghost text-red-500 btn-xs">cancel</button>} */}
 
                 <th>
 

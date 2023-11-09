@@ -1,10 +1,15 @@
 import { Link, useLoaderData } from "react-router-dom";
+import { useEffect } from "react";
 import useAuth from "../hooks/useAuth";
 import Swal from "sweetalert2";
 
 const FoodDeatils = () => {
     const foodDetails = useLoaderData()
     const { user } = useAuth()
+
+    useEffect(() => {
+        document.title = 'Charity Organizations food-Details'; // Set the desired page title
+    }, []);
     //console.log(foodDetails);
     //console.log(Object.keys(foodDetails).join(','));
     const { _id, food_image, food_name,
@@ -38,13 +43,13 @@ const FoodDeatils = () => {
         }
         // console.log(requestFood);
 
-        fetch('http://localhost:5000/api/v1/user/request', {
+        fetch('https://communit-food-sharing-server.vercel.app/api/v1/user/request', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
             },
             body: JSON.stringify(requestFood),
-            credentials: 'include',
+            //credentials: 'include',
         })
             .then(res => res.json())
             .then(data => {

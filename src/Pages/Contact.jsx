@@ -1,7 +1,12 @@
+import { useEffect } from "react";
 
 const Contact = () => {
+
+    useEffect(() => {
+        document.title = 'Charity Organizations Contact-us';
+    }, []);
     return (
-        <div className="mt-5 mb-5"> 
+        <div className="mt-5 mb-5">
 
             <div className="text-center space-y-5 mt-5 mb-5 ">
                 <h1 className="text-4xl font-semibold">CONTACT DETAILS </h1>
